@@ -77,3 +77,24 @@ You're about to initialize a Firebase project in this directory:
 [info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
 [info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
 [info] 
+[debug] [2025-04-16T22:55:47.878Z] ----------------------------------------------------------------------
+[debug] [2025-04-16T22:55:47.881Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\UTENTE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-04-16T22:55:47.881Z] CLI Version:   14.2.0
+[debug] [2025-04-16T22:55:47.881Z] Platform:      win32
+[debug] [2025-04-16T22:55:47.881Z] Node Version:  v20.11.1
+[debug] [2025-04-16T22:55:47.881Z] Time:          Thu Apr 17 2025 00:55:47 GMT+0200 (Central European Summer Time)
+[debug] [2025-04-16T22:55:47.881Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-16T22:55:47.886Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-16T22:55:47.887Z] > authorizing via signed-in user (russellnavarez18@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\UTENTE\cyn-yan
+
