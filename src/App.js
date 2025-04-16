@@ -5,6 +5,7 @@ import { auth } from './firebase'; // make sure this is your configured firebase
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import './styles/App.css';
 
 function Layout() {
   const location = useLocation();
