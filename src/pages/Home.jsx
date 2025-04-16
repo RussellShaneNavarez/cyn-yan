@@ -1,18 +1,26 @@
-// src/pages/Home.js
 import { useState, useEffect } from 'react';
 import { auth } from '../firebase';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Home = () => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(setUser);
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+      setLoading(false); // Set loading to false once the auth state is known
+    });
+
     return () => unsubscribe();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>; // Show a loading indicator while auth state is being fetched
+  }
+
   if (!user) {
-    return <Redirect to="/login" />;
+    return <Navigate to="/login" />;
   }
 
   return (

@@ -1,24 +1,28 @@
-// src/pages/Login.js
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { auth, provider } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
-      const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.error(error);
     }
   };
 
-  if (user) {
-    return <Redirect to="/home" />;
-  }
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate('/home');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
 
   return (
     <div className="p-6">
